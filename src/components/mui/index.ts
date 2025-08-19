@@ -91,7 +91,6 @@ export {
   
   // Utilities
   useTheme,
-  useMediaQuery,
   styled,
   alpha,
   darken,
