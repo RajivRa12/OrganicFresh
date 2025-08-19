@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, Typography } from "@/components/mui";
 import { MapPin, Phone, Mail, Clock, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
@@ -83,11 +82,11 @@ export default function ContactPage() {
             </div>
             
             <div>
-              <Card className="shadow-lg border-green-200">
-                <CardHeader>
-                  <Typography variant="h5" component="h2">Send us a Message</Typography>
-                </CardHeader>
-                <CardContent>
+              <div className="bg-white rounded-lg shadow-lg border border-green-200 p-6">
+                <div className="mb-6">
+                  <h2 className="text-2xl font-semibold text-gray-900">Send us a Message</h2>
+                </div>
+                <div>
                   <form className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -115,11 +114,10 @@ export default function ContactPage() {
                     
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Phone Number *
+                        Phone Number
                       </label>
                       <input
                         type="tel"
-                        required
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                         placeholder="Enter your phone number"
                       />
@@ -129,18 +127,12 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Subject *
                       </label>
-                      <select
+                      <input
+                        type="text"
                         required
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      >
-                        <option value="">Select a subject</option>
-                        <option value="business-partnership">Business Partnership</option>
-                        <option value="farmer-registration">Farmer Registration</option>
-                        <option value="product-inquiry">Product Inquiry</option>
-                        <option value="support">Technical Support</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="other">Other</option>
-                      </select>
+                        placeholder="What is this about?"
+                      />
                     </div>
                     
                     <div>
@@ -149,102 +141,100 @@ export default function ContactPage() {
                       </label>
                       <textarea
                         required
-                        rows={4}
+                        rows={5}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                        placeholder="Tell us about your inquiry or requirements..."
+                        placeholder="Tell us how we can help you..."
                       ></textarea>
                     </div>
                     
                     <button
                       type="submit"
-                      className="w-full bg-green-600 text-white py-3 px-6 rounded-md font-medium hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                      className="w-full bg-green-600 text-white py-3 px-6 rounded-md font-medium hover:bg-green-700 transition-colors duration-200"
                     >
                       Send Message
                     </button>
                   </form>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Find Us</h2>
+            <p className="text-gray-600">Visit our office in Bengaluru</p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+                <div className="text-center">
+                  <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                  <p className="text-gray-600">Interactive Map Coming Soon</p>
+                  <p className="text-sm text-gray-500 mt-2">
+                    Jyothi Nagar, Nelamgala, Bengaluru, Karnataka, 562123
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Quick answers to common questions about working with organicFresh.
-            </p>
+            <p className="text-gray-600">Quick answers to common questions</p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="p-6">
-              <CardHeader>
-                <Typography variant="h6" component="h3">How do I register as a farmer?</Typography>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  Simply fill out our farmer registration form on the website or call us directly. 
-                  Our team will guide you through the entire process.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-lg font-semibold mb-3">How quickly do you respond to inquiries?</h3>
+              <p className="text-gray-600">We typically respond to all inquiries within 24 hours. For urgent matters, calling us directly is the fastest way to get assistance.</p>
+            </div>
             
-            <Card className="p-6">
-              <CardHeader>
-                <Typography variant="h6" component="h3">What are your delivery areas?</Typography>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  We currently serve Bangalore and surrounding areas. We're expanding to other cities 
-                  and will notify you when we reach your location.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-lg font-semibold mb-3">What are your business hours?</h3>
+              <p className="text-gray-600">We're open Monday through Friday from 9 AM to 6 PM, and Saturday from 9 AM to 2 PM. We're closed on Sundays.</p>
+            </div>
             
-            <Card className="p-6">
-              <CardHeader>
-                <Typography variant="h6" component="h3">How do you ensure quality?</Typography>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  We have strict quality control measures at every step - from farm inspection to 
-                  delivery. All produce is checked for freshness and quality standards.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-lg font-semibold mb-3">Do you offer services outside of Bengaluru?</h3>
+              <p className="text-gray-600">Yes! While our main office is in Bengaluru, we serve clients across Karnataka and are expanding to other states. Contact us to discuss your specific location and requirements.</p>
+            </div>
             
-            <Card className="p-6">
-              <CardHeader>
-                <Typography variant="h6" component="h3">What payment methods do you accept?</Typography>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">
-                  We accept various payment methods including bank transfers, UPI, and digital wallets. 
-                  Payment terms can be discussed based on your business requirements.
-                </p>
-              </CardContent>
-            </Card>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-lg font-semibold mb-3">Can I schedule a meeting to discuss my business needs?</h3>
+              <p className="text-gray-600">Absolutely! We welcome in-person meetings and consultations. Please call us to schedule an appointment that works for both parties.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-green-700 to-green-800 text-white">
+      <section className="py-16 bg-green-700 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-lg opacity-90 mb-8">
-            Join thousands of satisfied farmers and businesses who trust organicFresh.
-          </p>
+          <p className="text-xl mb-8 opacity-90">Let's discuss how organicFresh can transform your business</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-700 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">
+            <a
+              href="tel:+918438327763"
+              className="inline-flex items-center justify-center gap-2 bg-white text-green-700 px-8 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
               Call Us Now
-            </button>
-            <button className="border border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-green-700 transition-colors">
-              Schedule a Meeting
-            </button>
+            </a>
+            <a
+              href="mailto:info@organicfresh.co.in"
+              className="inline-flex items-center justify-center gap-2 border border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:text-green-700 transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+              Send Email
+            </a>
           </div>
         </div>
       </section>
